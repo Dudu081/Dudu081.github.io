@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerFit Center</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #0011ff;
+            padding: 15px;
+            text-align: center;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #2b2ba7;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        section.highlight {
+            background-color: #cfe4ff;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #1c1a1a;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        h1{
+          font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+       <h3>Seja Bem vindo a</h3> <h1>PowerFit Center</h1>
+    </header>
+
+    <nav>
+        <a href="Inicio">Inicio</a>
+        <a href="#exercicios">Exercícios</a>
+        <a href="#nutricao">Nutrição</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <section id="destaque" class="highlight">
+        <h2>Destaque</h2>
+        <h4>No dinâmico universo do fitness e academia, o corpo humano é esculpido e fortalecido, não apenas como um templo físico, mas como um reflexo do comprometimento com a saúde e o bem-estar. Nas academias modernas, o pulsar constante das máquinas ecoa a determinação dos frequentadores, enquanto os pesos se erguem em uma dança ritmada de superação pessoal. Este é um mundo onde a busca pela vitalidade se entrelaça com a disciplina, onde cada suor derramado conta uma história de resiliência. Mais do que um espaço para exercícios, a academia torna-se um santuário onde os limites são desafiados, e a jornada de transformação se desenrola com cada repetição. É um ambiente onde treinadores e entusiastas compartilham o mesmo propósito: moldar não apenas corpos tonificados, mas também mentalidades robustas.</h4>
+        <img src="Sem título.jpg" alt="Imagem Destaque">
+    </section>
+
+    <
+
+
+    coloquei a parte do css dentro do html mesmo, mas é só copiar tudo do css e colar na parte de css...
