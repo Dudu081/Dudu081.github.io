@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fitness World</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estilos CSS personalizados */
+        body.light-theme {
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+            color: #333;
+            transition: background-color 0.5s;
+        }
+
+        body.theme-cyan {
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+            background-color: #00CED1;
+            color: #f0f0f0;
+            transition: background-color 0.5s;
+        }
+
+        body.theme-brown {
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+            background-color: #8B4513;
+            color: #f0f0f0;
+            transition: background-color 0.5s;
+        }
+
+        .container {
+            max-width: 1200px;
+        }
+
+        .theme-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+        }
+
+        .clock {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-family: 'Helvetica Neue', sans-serif;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .card {
+            width: 300px;
+            margin: 10px;
+            display: inline-block;
+            transition: transform 0.2s;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav {
+            background-color: #333;
+            color: #f0f0f0;
+        }
+
+        .nav .nav-item .nav-link {
+            color: #f0f0f0;
+        }
+
+        .nav .nav-item .nav-link:hover {
+            color: #f0f0f0;
+            background-color: #555;
+        }
+
+        .login-form {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-form .form-control {
+            margin: 5px 0;
+        }
+
+        .btn-primary {
+            background-color: #00CED1;
+            border-color: #00CED1;
+            color: #fff;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0099a9;
+        }
+
+        .btn-primary:focus {
+            box-shadow: 0 0 0 0.2rem rgba(0, 206, 209, 0.5);
+        }
+
+        .modal-content {
+            border: none;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-header {
+            background-color: #00CED1;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="light-theme">
+    <button class="theme-button btn btn-secondary" onclick="toggleTheme()">Alterar Tema</button>
+    <div class="clock" id="clock"></div>
+    <div class="container">
+        <header>
+            <h1>Fitness World</h1>
+        </header>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Treinos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Nutrição</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Loja</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
+                </li>
+            </ul>
+        </nav>
+
+        <h2>Artigos de Fitness</h2>
+
+        <div class="row">
+            <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Treino Cardio">
+                <div class="card-body">
+                    <h5 class="card-title">Treino Cardio</h5>
+                    <p class="card-text">Um treino de cardio para melhorar sua resistência.</p>
+                    <a href="#" class="btn btn-primary">Saiba mais</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Receitas Saudáveis">
+                <div class="card-body">
+                    <h5 class="card-title">Receitas Saudáveis</h5>
+                    <p class="card-text">Descubra deliciosas receitas saudáveis para sua dieta fitness.</p>
+                    <a href="#" class="btn btn-primary">Saiba mais</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Suplementos">
+                <div class="card-body">
+                    <h5 class="card-title">Suplementos</h5>
+                    <p class="card-text">Os melhores suplementos para seus objetivos de fitness.</p>
+                    <a href="#" class="btn btn-primary">Saiba mais</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Treino de Força">
+                <div class="card-body">
+                    <h5 class="card-title">Treino de Força</h5>
+                    <p class="card-text">Ganhe massa muscular com nosso programa de treino de força.</p>
+                    <a href="#" class="btn btn-primary">Saiba mais</a>
+                </div>
+            </div>
+            <!-- Adicione mais cards aqui -->
+        </div>
+
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">Faça Login</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="login-form">
+                            <div class="form-group">
+                                <label for="username">Usuário</label>
+                                <input type="text" class="form-control" id="username" placeholder="Digite seu nome de usuário">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Senha</label>
+                                <input type="password" class="form-control" id="password" placeholder="Digite sua senha">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Entrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript
+        function toggleTheme() {
+            const body = document.body;
+            if (body.classList.contains("light-theme")) {
+                body.classList.remove("light-theme");
+                body.classList.add("theme-cyan");
+            } else if (body.classList.contains("theme-cyan")) {
+                body.classList.remove("theme-cyan");
+                body.classList.add("theme-brown");
+            } else {
+                body.classList.remove("theme-brown");
+                body.classList.add("light-theme");
+            }
+        }
+
+        function updateClock() {
+            const now = new Date();
+            const clockElement = document.getElementById("clock");
+            const hours = String(now.getHours()).padStart(2, "0");
+            const minutes = String(now.getMinutes()).padStart(2, "0");
+            const seconds = String(now.getSeconds()).padStart(2, "0");
+            clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        // Atualiza o relógio a cada segundo
+        setInterval(updateClock, 1000);
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
